@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<!--=== Coding by CodingLab | www.codinglabweb.com === -->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!----======== CSS ======== -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+     
+    <!----===== Iconscout CSS ===== -->
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+
+    <!--<title>Admin Dashboard Panel</title>--> 
+</head>
+<body>
+    <nav>
+        <div class="logo-name">
+            <div class="logo-image">
+                <img src="{{ url_for('static', filename='images/images.png') }}" alt="">
+            </div>
+
+            <span class="logo_name">ID CARD</span>
+        </div>
+
+        <div class="menu-items">
+            <ul class="nav-links">
+                <li><a href="{{ url_for('upfile') }}">
+                    <i class="uil uil-estate"></i>
+                    <span class="link-name">Identity Card</span>
+                </a></li>
+        
+        </div>
+    </nav>
+    {% block content %}{% endblock %}
+    {% block script %}{% endblock %}
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
