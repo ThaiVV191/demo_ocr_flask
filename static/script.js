@@ -1,4 +1,5 @@
-var blockDashboard = document.getElementById('dashboard_id');
+var blockDashboard = document.getElementById('upload-image');
+var informationDashboard = document.getElementById('information-card');
 var fileInput = document.getElementById('my-file-input');
 fileInput.addEventListener('change', function() {
     
@@ -9,23 +10,48 @@ fileInput.addEventListener('change', function() {
     xhr.onload = function() {
     if (xhr.status === 200 && fileInput.value !== '') {
         blockDashboard.style.display = 'none';
+        informationDashboard.style.display = 'flex';
         // Thêm ảnh vào DOM
         var data = JSON.parse(xhr.responseText);
-        var image = new Image();
-        var div_new = document.getElementById("myDiv");
-        div_new.innerHTML ="";
-        div_new.style.display = "flex";
-		div_new.style.flexDirection = "column";
+        var image = document.getElementById('image-result')
         image.src = 'data:image/jpeg;base64,' + data.image;
-        div_new.appendChild(image);
-        var btn = document.createElement("button");
-		btn.innerHTML = "Choose another file";
-		btn.classList.add("btn-upload");
-		btn.setAttribute("id", "my-button");
-        btn.onclick = function() {
-			document.getElementById('my-file-input').click();
-		};
-        div_new.appendChild(btn);
+        var information_card = data.informations
+        var div_image_id = document.getElementById("image-container-id");
+        for (let key in information_card) {
+            var points = information_card[key][0]
+            const newDiv = document.createElement("div");
+            newDiv.style.left = points[0].toString() + "px";
+            newDiv.style.top = points[1].toString() + "px";
+            newDiv.style.width = (points[2] - points[0]).toString() + "px";
+            newDiv.style.height = (points[3] - points[1]).toString() + "px";
+            newDiv.style.position = "absolute";
+            newDiv.style.border = '1px solid red';
+            div_image_id.appendChild(newDiv)
+            var feature = document.getElementById(key)
+            feature.addEventListener("mouseover", function() {
+                feature.style.backgroundColor = "rgba(0, 0, 0, 0.5)";
+                newDiv.style.backgroundColor = "rgba(0, 0, 0, 0.5)";
+              });
+              
+            feature.addEventListener("mouseout", function() {
+                feature.style.backgroundColor = "";
+                newDiv.style.backgroundColor = "";
+              });
+            newDiv.addEventListener("mouseover", function() {
+                feature.style.backgroundColor = "rgba(0, 0, 0, 0.5)";
+                newDiv.style.backgroundColor = "rgba(0, 0, 0, 0.5)";
+              });
+              
+            newDiv.addEventListener("mouseout", function() {
+                feature.style.backgroundColor = "";
+                newDiv.style.backgroundColor = "";
+              });
+            
+            var cells = feature.getElementsByTagName("td")
+            for (var i = 1; i < cells.length; i++){
+                cells[i].innerHTML = information_card[key][i]
+            }
+        }
     } else {
         console.log('Đã xảy ra lỗi!');
     }

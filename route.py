@@ -27,10 +27,17 @@ def process_image(file):
     filepath = os.path.join(app.config['UPLOAD_FOLDER'], file.filename)
     image = Image.open(filepath)
     img_resized = image.resize((400,300))
+    w,h = img_resized.size
     buffer = BytesIO()
     img_resized.save(buffer, format='JPEG')
     encoded_image = base64.b64encode(buffer.getvalue()).decode('utf-8')
-    return encoded_image
+    '''
+        informations to dict
+        {'id_number': [[x1,  y1, x2, y2],id_number, confidence_score], ....}
+    '''
+    id_number = [[0, 0, 40, 40],'12312454353423423423423', 99]
+    information_car = {'feature-id-number': id_number}
+    return encoded_image, information_car
 
 @app.route('/upload_file', methods=['POST'])
 def upload_file():
@@ -38,9 +45,10 @@ def upload_file():
         file = request.files['myImage']
         file.save(os.path.join(app.config['UPLOAD_FOLDER'], file.filename))
         # Xử lý ảnh ở đây
-        processed_image = process_image(file)
+        processed_image, information_car = process_image(file)
         # Trả về ảnh đã xử lý
-        return jsonify({'image': processed_image})
+
+        return jsonify({'image': processed_image, 'informations': information_car})
     else:
         return render_template('upfile.html')
 

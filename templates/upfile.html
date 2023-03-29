@@ -3,7 +3,7 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 {% endblock %}
 {% block content %}
-    <!-- <section class="dashboard">
+    <section id="upload-image" class="dashboard">
         <div id ="dashboard_id" class="img-placeholder">
             <img src="{{ url_for('static', filename='images/camera.149f7439.svg') }}" alt="icon_upload_img" class="icon-upload">
             <div style="font-weight: bold; font-size: 18px;" class="text_up_load">Upload file</div>
@@ -15,14 +15,16 @@
                 <button id="upload-button" class="btn-upload" onclick="document.getElementById('my-file-input').click()"> Choose file</button>
             </div>
         </div>   
-    </section> -->
-    <section class="dashboard">
+    </section>
+    <section id="information-card" class="dashboard" style="display: none;" >
         
         <div class="col-1" style="display: flex; align-items: center;justify-content: center; flex-direction: column;">
             <div style="display: flex; align-items: center; justify-content: center; height: 100%;">
-                <img src="{{ url_for('static', filename='images/images.jpg') }}" alt="icon_upload_img" class="image-result" style="margin: auto;">
+                <div id="image-container-id" style="margin: auto; position: relative; display: inline-block;width: auto; height: auto;">
+                    <img id="image-result" src="{{ url_for('static', filename='images/images.jpg') }}" alt="icon_upload_img" class="image-result" >
+                </div>
             </div>
-            <button id="upload-button" class="btn-upload" style="margin-top: auto;"> Choose file</button>
+            <button id="upload-button-other" class="btn-upload" style="margin-top: auto;" onclick="document.getElementById('my-file-input').click()"> Choose anhother file</button>
             
         </div>
         <div class="col-2">
@@ -30,38 +32,88 @@
             
             <table class="table table-bordered table-striped table-responsive-stack"  id="tableOne">
                <thead class="thead-dark">
-                  <tr>
-                     <th>Name</th>
-                     <th>Color</th>
-                     <th>Taste</th>
+                  <tr class="name-feature">
+                     <th>Properties</th>
+                     <th>Value</th>
+                     <th>%</th>
                   </tr>
                </thead>
                <tbody>
-                  <tr>
-                     <td>Apple</td>
+                  <tr id="feature-id-number">
+                     <td>ID number</td>
                      <td>Green and Red</td>
                      <td>Sweet and Tart</td>
                   </tr>
-                  <tr>
-                     <td>Banana</td>
+                  <tr id="feature-name">
+                     <td>Name</td>
                      <td>Yellow</td>
                      <td>Sweet and Mushy</td>
                   </tr>
-                  <tr>
-                     <td>Mango</td>
+                  <tr id="feature-date-birth">
+                     <td>Date of birth</td>
                      <td>Yellowish Green</td>
                      <td>Tangy</td>
                   </tr>
-                  <tr>
-                     <td>Orange</td>
+                  <tr id="feature-sex">
+                     <td>Sex</td>
                      <td>Orange</td>
                      <td>Sweet and Tangy</td>
                   </tr>
-                  <tr>
-                     <td>Blueberry</td>
+                  <tr id="feature-ethniccity">
+                     <td>Ethnicity</td>
                      <td>Blue</td>
                      <td>Mild Sweetness</td>
                   </tr>
+                  <tr id="feature-type">
+                    <td>Type</td>
+                    <td>Blue</td>
+                    <td>Mild Sweetness</td>
+                 </tr>
+                 <tr id="feature-date-exprity">
+                    <td>Date of exprity</td>
+                    <td>Blue</td>
+                    <td>Mild Sweetness</td>
+                 </tr>
+                 <tr id="feature-place-origin">
+                    <td>Place of origin</td>
+                    <td>Blue</td>
+                    <td>Mild Sweetness</td>
+                 </tr>
+                 <tr id="feature-address">
+                    <td>Address</td>
+                    <td>Blue</td>
+                    <td>Mild Sweetness</td>
+                 </tr>
+                 <tr id="feature-specific-address">
+                    <td>Specific address</td>
+                    <td>Blue</td>
+                    <td>Mild Sweetness</td>
+                 </tr>
+                 <tr id="feature-overall">
+                    <td>Overall score</td>
+                    <td>Blue</td>
+                    <td>Mild Sweetness</td>
+                 </tr>
+                 <tr id="feature-result">
+                    <td>Checking_result</td>
+                    <td>Blue</td>
+                    <td>Mild Sweetness</td>
+                 </tr>
+                 <tr id="feature-qrcode">
+                    <td>QR code</td>
+                    <td>Blue</td>
+                    <td>Mild Sweetness</td>
+                 </tr>
+                 <tr id="feature-post-check-result">
+                    <td>Post_check_result</td>
+                    <td>Blue</td>
+                    <td>Mild Sweetness</td>
+                 </tr>
+                 <tr id="feature-quality-check-result">
+                    <td>Quality_check_result</td>
+                    <td>Blue</td>
+                    <td>Mild Sweetness</td>
+                 </tr>
                </tbody>
             </table>
         
