@@ -1,4 +1,7 @@
 {% extends "base.html" %}
+{% block css %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+{% endblock %}
 {% block content %}
     <!-- <section class="dashboard">
         <div id ="dashboard_id" class="img-placeholder">
@@ -15,8 +18,52 @@
     </section> -->
     <section class="dashboard">
         
-        <div class="col-1">Cột 1</div>
-        <div class="col-2">Cột 2</div>
+        <div class="col-1" style="display: flex; align-items: center;justify-content: center; flex-direction: column;">
+            <div style="display: flex; align-items: center; justify-content: center; height: 100%;">
+                <img src="{{ url_for('static', filename='images/images.jpg') }}" alt="icon_upload_img" class="image-result" style="margin: auto;">
+            </div>
+            <button id="upload-button" class="btn-upload" style="margin-top: auto;"> Choose file</button>
+            
+        </div>
+        <div class="col-2">
+
+            
+            <table class="table table-bordered table-striped table-responsive-stack"  id="tableOne">
+               <thead class="thead-dark">
+                  <tr>
+                     <th>Name</th>
+                     <th>Color</th>
+                     <th>Taste</th>
+                  </tr>
+               </thead>
+               <tbody>
+                  <tr>
+                     <td>Apple</td>
+                     <td>Green and Red</td>
+                     <td>Sweet and Tart</td>
+                  </tr>
+                  <tr>
+                     <td>Banana</td>
+                     <td>Yellow</td>
+                     <td>Sweet and Mushy</td>
+                  </tr>
+                  <tr>
+                     <td>Mango</td>
+                     <td>Yellowish Green</td>
+                     <td>Tangy</td>
+                  </tr>
+                  <tr>
+                     <td>Orange</td>
+                     <td>Orange</td>
+                     <td>Sweet and Tangy</td>
+                  </tr>
+                  <tr>
+                     <td>Blueberry</td>
+                     <td>Blue</td>
+                     <td>Mild Sweetness</td>
+                  </tr>
+               </tbody>
+            </table>
         
     </section>
 {% endblock %}
