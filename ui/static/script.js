@@ -6,12 +6,13 @@ fileInput.addEventListener('change', function() {
     var formData = new FormData();
     formData.append('myImage', fileInput.files[0]);
     var xhr = new XMLHttpRequest();
-    xhr.open('POST', '/upload_file');
+    xhr.open('POST', 'http://127.0.0.1:5000');
     xhr.onload = function() {
-    if (xhr.status === 200 && fileInput.value !== '') {
+    console.log('Đã xảy ra lỗi!');
+    if (this.status === 200 ) {
+      console.log('Đã xảy ra lỗi 111!');
         blockDashboard.style.display = 'none';
         informationDashboard.style.display = 'flex';
-        // Thêm ảnh vào DOM
         var data = JSON.parse(xhr.responseText);
         var image = document.getElementById('image-result')
         image.src = 'data:image/jpeg;base64,' + data.image;

@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<!--=== Coding by CodingLab | www.codinglabweb.com === -->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!----===== Iconscout CSS ===== -->
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+    <!----======== CSS ======== -->
+    <link rel="stylesheet" href="../static/style.css"> 
+
+    <!--<title>Admin Dashboard Panel</title>--> 
+</head>
+<body>
+   <nav>
+      <div class="logo-name">
+          <div class="logo-image">
+            <a href="../templates/home.html">
+              <img src="../static/images/images.png" alt="">
+            </a>
+          </div>
+
+          <span class="logo_name">ID CARD</span>
+      </div>
+
+      <div class="menu-items">
+          <ul class="nav-links">
+              <li><a href="../templates/upfile.html">
+                  <i class="uil uil-estate"></i>
+                  <span class="link-name">Identity Card</span>
+              </a></li>
+      
+      </div>
+  </nav>
+    <section id="upload-image" class="dashboard">
+      <div id ="dashboard_id" class="img-placeholder">
+          <img src="../static/images/camera.149f7439.svg" alt="icon_upload_img" class="icon-upload">
+          <div style="font-weight: bold; font-size: 18px;" class="text_up_load">Upload file</div>
+          <div style="font-size: 14px; color: rgb(140,140,140); margin-bottom: 12px; text-align: center;">
+              " Minimum resolution 1280*720, file size less than 20Mb, formats .jpg, .jpeg, .pdf "
+          </div>
+          <div class="d-flex">
+              <input type="file" id="my-file-input" style="display:none">
+              <button id="upload-button" class="btn-upload" onclick="document.getElementById('my-file-input').click()"> Choose file</button>
+          </div>
+      </div>   
+  </section>
+  <section id="information-card" class="dashboard" style="display: none;" >
+      
+      <div class="col-1" style="display: flex; align-items: center;justify-content: center; flex-direction: column;">
+          <div style="display: flex; align-items: center; justify-content: center; height: 100%;">
+              <div id="image-container-id" style="margin: auto; position: relative; display: inline-block;width: auto; height: auto;">
+                  <img id="image-result" src="../static/images/images.jpg" alt="icon_upload_img" class="image-result" >
+              </div>
+          </div>
+          <button id="upload-button-other" class="btn-upload" style="margin-top: auto;" onclick="document.getElementById('my-file-input').click()"> Choose anhother file</button>
+          
+      </div>
+      <div class="col-2">
+
+          
+          <table class="table table-bordered table-striped table-responsive-stack"  id="tableOne">
+             <thead class="thead-dark">
+                <tr class="name-feature">
+                   <th>Properties</th>
+                   <th>Value</th>
+                   <th>%</th>
+                </tr>
+             </thead>
+             <tbody>
+                <tr id="feature-id-number">
+                   <td>ID number</td>
+                   <td>Green and Red</td>
+                   <td>Sweet and Tart</td>
+                </tr>
+                <tr id="feature-name">
+                   <td>Name</td>
+                   <td>Yellow</td>
+                   <td>Sweet and Mushy</td>
+                </tr>
+                <tr id="feature-date-birth">
+                   <td>Date of birth</td>
+                   <td>Yellowish Green</td>
+                   <td>Tangy</td>
+                </tr>
+                <tr id="feature-sex">
+                   <td>Sex</td>
+                   <td>Orange</td>
+                   <td>Sweet and Tangy</td>
+                </tr>
+                <tr id="feature-ethniccity">
+                   <td>Ethnicity</td>
+                   <td>Blue</td>
+                   <td>Mild Sweetness</td>
+                </tr>
+                <tr id="feature-type">
+                  <td>Type</td>
+                  <td>Blue</td>
+                  <td>Mild Sweetness</td>
+               </tr>
+               <tr id="feature-date-exprity">
+                  <td>Date of exprity</td>
+                  <td>Blue</td>
+                  <td>Mild Sweetness</td>
+               </tr>
+               <tr id="feature-place-origin">
+                  <td>Place of origin</td>
+                  <td>Blue</td>
+                  <td>Mild Sweetness</td>
+               </tr>
+               <tr id="feature-address">
+                  <td>Address</td>
+                  <td>Blue</td>
+                  <td>Mild Sweetness</td>
+               </tr>
+               <tr id="feature-specific-address">
+                  <td>Specific address</td>
+                  <td>Blue</td>
+                  <td>Mild Sweetness</td>
+               </tr>
+               <tr id="feature-overall">
+                  <td>Overall score</td>
+                  <td>Blue</td>
+                  <td>Mild Sweetness</td>
+               </tr>
+               <tr id="feature-result">
+                  <td>Checking_result</td>
+                  <td>Blue</td>
+                  <td>Mild Sweetness</td>
+               </tr>
+               <tr id="feature-qrcode">
+                  <td>QR code</td>
+                  <td>Blue</td>
+                  <td>Mild Sweetness</td>
+               </tr>
+               <tr id="feature-post-check-result">
+                  <td>Post_check_result</td>
+                  <td>Blue</td>
+                  <td>Mild Sweetness</td>
+               </tr>
+               <tr id="feature-quality-check-result">
+                  <td>Quality_check_result</td>
+                  <td>Blue</td>
+                  <td>Mild Sweetness</td>
+               </tr>
+             </tbody>
+          </table>
+      
+  </section>
+  <script src="../static/script.js"></script>
+</body>
+</html>
+
+
+
