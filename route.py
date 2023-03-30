@@ -14,7 +14,7 @@ app.config['UPLOAD_FOLDER'] = 'images'
 CORS(app)
 def process_image(file):
     filepath = os.path.join(app.config['UPLOAD_FOLDER'], file.filename)
-    image = Image.open(filepath)
+    image = Image.open(filepath).convert('RGB')
     img_resized = image.resize((400,300))
     w,h = img_resized.size
     buffer = BytesIO()
